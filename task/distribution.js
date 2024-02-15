@@ -6,6 +6,22 @@ class Distribution {
 
     console.log('SubmitDistributionList called');
 
+    console.log('Now you have 10 seconds to shut down the node');
+
+    let timeLeft = 10; // Starting from 10 seconds
+
+    const countdownInterval = setInterval(() => {
+      console.log(`${timeLeft}...`);
+      timeLeft -= 1;
+
+      if (timeLeft < 0) {
+        clearInterval(countdownInterval);
+        console.log("Time's up!");
+      }
+    }, 1000);
+
+    await new Promise(resolve => setTimeout(resolve, (10 + 1) * 1000));
+
     try {
       const distributionList = await this.generateDistributionList(round);
 
@@ -27,6 +43,23 @@ class Distribution {
 
   async auditDistribution(roundNumber) {
     console.log('auditDistribution called with round', roundNumber);
+
+    console.log('Now you have 10 seconds to shut down the node');
+
+    let timeLeft = 10; // Starting from 10 seconds
+
+    const countdownInterval = setInterval(() => {
+      console.log(`${timeLeft}...`);
+      timeLeft -= 1;
+
+      if (timeLeft < 0) {
+        clearInterval(countdownInterval);
+        console.log("Time's up!");
+      }
+    }, 1000);
+
+    await new Promise(resolve => setTimeout(resolve, (10 + 1) * 1000));
+    
     await namespaceWrapper.validateAndVoteOnDistributionList(
       this.validateDistribution,
       roundNumber,

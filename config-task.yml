@@ -1,5 +1,5 @@
 # Name and metadata of your task
-task_name: 'task name'
+task_name: 'Test Distributed Task'
 author: 'Koii'
 description: 'description'
 repositoryUrl: 'https://github.com/koii-network/task-template' #replace with your own repo url
@@ -14,8 +14,8 @@ task_audit_program: 'dist/main.js'
 # Total round time of your task : it must be given in slots and each slot is roughly equal to 408ms
 round_time: 1500
 
-audit_window: 350
-submission_window: 350
+audit_window: 500
+submission_window: 500
 
 # Amounts in KOII
 
@@ -25,7 +25,7 @@ minimum_stake_amount: 1.9
 # total bounty is not accepted in case of update task
 total_bounty_amount: 100
 
-bounty_amount_per_round: 100
+bounty_amount_per_round: 1
 
 #Number of times allowed to re-submit the distribution  list in case the distribution list is audited
 allowed_failed_distributions: 3
