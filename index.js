@@ -20,6 +20,20 @@ if (app) {
   });
   app.get('/value', async (req, res) => {
     const value = await namespaceWrapper.storeGet('value');
+    if (app) {
+      //  Write your Express Endpoints here.
+      //  For Example
+      //  app.post('/accept-cid', async (req, res) => {})
+
+      // Sample API that return your stored value from the local DB
+
+      app.get("/value", async (req, res) => {
+        const value = await namespaceWrapper.storeGet("value");
+        console.log("value", value);
+
+        res.status(200).json({ value: value });
+      });
+    }
     console.log('value', value);
 
     res.status(200).json({ value: value });

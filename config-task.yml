@@ -1,53 +1,60 @@
-# Name and metadata of your task
-task_name: 'task name'
-author: 'Koii'
-description: 'description'
-repositoryUrl: 'https://github.com/koii-network/task-template' #replace with your own repo url
-imageUrl: 'imageUrl'
-
-# network value can be DEVELOPMENT , ARWEAVE or IPFS, Recommended IPFS when deploying to testnet as the cli automatically takes care of uploading the executable with the help of web3.js key
-task_executable_network: 'IPFS'
-
-# Path to your executable webpack if the selected network is IPFS and in case of DEVELOPMENT  name it as main
+#Provide the taskId if you are updating the task
+task_id: "DS7GcmnmKZ8hJfNNghuaW88UdNRudH9CYczXtw5TGiYB"
+# Name and description of your task
+task_name: "web3-revolution"
+task_description: 'This is a simple web3 task that returns "Hello, World!"'
 task_audit_program: 'dist/main.js'
 
-# Total round time of your task : it must be given in slots and each slot is roughly equal to 408ms
+migrationDescription: "Optimized CPU and RAM usage"
+
+# Network value can be DEVELOPMENT, ARWEAVE or IPFS
+task_executable_network: "DEVELOPMENT"
+
+# Total round time of your task: it must be given in slots and each slot is roughly equal to 4ms
 round_time: 1500
 
-audit_window: 350
-submission_window: 350
+audit_window: 300
+submission_window: 300
 
 # Amounts in KOII
 
-minimum_stake_amount: 1.9
+minimum_stake_amount: 2
 
-# total_bounty_amount cannot be grater than bounty_amount_per_round
+# total_bounty_amount cannot be greater than bounty_amount_per_round
 # total bounty is not accepted in case of update task
-total_bounty_amount: 100
+total_bounty_amount: 15
 
-bounty_amount_per_round: 100
+bounty_amount_per_round: 1
 
 #Number of times allowed to re-submit the distribution  list in case the distribution list is audited
 allowed_failed_distributions: 3
 
-#Space in MBs for the account size, that holds the task data
+#Space in MBs
 space: 1
 
 # Note that the value field in RequirementTag is optional, so it is up to you to include it or not based on your use case.
-# To add more global variables and task variables, please refer the type,value,description format shown below
+# To add more global variables and task variables, please refer to the type, value, and description format shown below
 
+author: "Ted"
+description: 'This is a simple task that returns "Hello, World!"'
+repositoryUrl: "https://github.com/koii-network/hello-world"
+imageUrl: "Enter you image URL"
 requirementsTags:
+  - type: TASK_VARIABLE
+    value: SECRET_SPHERON_STORAGE_KEY (required for this task)
+    description: "used to connect to Spheron"
+  - type: TASK_VARIABLE
+    value: "SCRAPING_URL"
+    description: "URL from which you want to scrape"
   - type: CPU
-    value: '4-core'
+    value: "4-core"
   - type: RAM
-    value: '5 GB'
+    value: "5 GB"
   - type: STORAGE
-    value: '5 GB'
-
-# OPTIONAL variables variables for creating task / REQUIRED variables for update task
-
-# OPTIONAL Only provide the taskId if you are updating the task otherwise leave blank
-task_id: ''
-
-# Provide the description for changes made in new version of task
-migrationDescription: ''
+    value: "test"
+  - type: NETWORK
+    value: "test"
+  - type: ARCHITECTURE
+    value: "AMD"
+  - type: OS
+    value: "OSX"
